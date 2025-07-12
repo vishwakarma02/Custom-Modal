@@ -1,3 +1,4 @@
+// modal/modal.service.ts
 import {
   ApplicationRef,
   EnvironmentInjector,
@@ -29,11 +30,9 @@ export class ModalService {
     this.appRef.attachView(modalRef.hostView);
 
     // Clean up when closed
-    const cleanup = () => {
+    modalRef.instance.closed.subscribe(() => {
       this.appRef.detachView(modalRef.hostView);
       domElem.remove();
-    };
-
-    modalRef.instance.closed.subscribe(cleanup);
+    });
   }
 }

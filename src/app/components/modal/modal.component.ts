@@ -1,3 +1,4 @@
+// modal/modal.component.ts
 import {
   Component,
   Input,
@@ -10,7 +11,6 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MODAL_DATA } from './modal.token';
-
 
 @Component({
   standalone: true,
@@ -25,7 +25,26 @@ import { MODAL_DATA } from './modal.token';
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrl: './modal.component.scss'
+  styles: [`
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .modal-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      z-index: 1001;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    }
+  `]
 })
 export class ModalComponent {
   @Input() component!: any;

@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ModalService } from './components/modal-v/modal.service';
-import { Item } from './components/item/item';
+import { ModalService } from './components/modal/modal.service';
+import { Component2 } from './components/component2/component2.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -14,6 +12,6 @@ export class App {
 
   constructor(private modal: ModalService) {}
   public openModal(): void {
-    this.modal.open(Item, { message: 'Hello from Item'});
+    this.modal.open(Component2, { message: 'Hello from Item'});
   }
 }
