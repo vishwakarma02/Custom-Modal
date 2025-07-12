@@ -1,4 +1,3 @@
-// component2.component.ts
 import { Component, Inject } from '@angular/core';
 import { MODAL_DATA } from '../modal/modal.token';
 

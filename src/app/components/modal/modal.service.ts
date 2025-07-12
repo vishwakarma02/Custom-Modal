@@ -1,4 +1,3 @@
-// modal/modal.service.ts
 import {
   ApplicationRef,
   EnvironmentInjector,

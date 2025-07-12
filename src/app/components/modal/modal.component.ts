@@ -1,4 +1,3 @@
-// modal/modal.component.ts
 import {
   Component,
   Input,
